@@ -20,7 +20,7 @@
 
         /* Header/Navigation */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
             padding: 1rem 0;
             position: sticky;
@@ -62,9 +62,9 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
             text-align: center;
             min-height: 60vh;
             display: flex;
@@ -83,13 +83,14 @@
             font-size: 1.5rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            max-width: 800px;
             animation: fadeInUp 0.8s ease 0.2s both;
         }
 
         .cta-button {
             display: inline-block;
             background: white;
-            color: #667eea;
+            color: #2c3e50;
             padding: 0.8rem 2rem;
             border-radius: 50px;
             text-decoration: none;
@@ -112,7 +113,7 @@
 
         /* Section Styling */
         section {
-            padding: 4rem 0;
+            padding: 4rem 2rem;
             background: white;
             margin: 2rem 0;
             border-radius: 10px;
@@ -122,23 +123,29 @@
         section h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: #667eea;
-            border-bottom: 3px solid #764ba2;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
             padding-bottom: 1rem;
         }
 
         /* About Section */
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             gap: 3rem;
             align-items: center;
+        }
+
+        @media(min-width: 768px) {
+            .about-content {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
         }
 
         .about-text h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #764ba2;
+            color: #3498db;
         }
 
         .about-text p {
@@ -147,28 +154,51 @@
             color: #555;
         }
 
+        /* Quick Info Block */
+        .quick-info {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .quick-info h4 {
+            margin-bottom: 0.8rem;
+            color: #2c3e50;
+        }
+
+        .quick-info ul {
+            list-style: none;
+        }
+
+        .quick-info li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
         /* Skills Section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
         }
 
         .skill-card {
             background: #f8f9fa;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 8px;
-            border-left: 4px solid #667eea;
+            border-top: 4px solid #3498db;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .skill-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.15);
         }
 
         .skill-card h3 {
-            color: #764ba2;
+            color: #2c3e50;
             margin-bottom: 1rem;
             font-size: 1.2rem;
         }
@@ -178,13 +208,14 @@
         }
 
         .skill-card li {
-            padding: 0.5rem 0;
+            padding: 0.4rem 0;
             color: #555;
+            font-size: 0.95rem;
         }
 
         .skill-card li:before {
             content: "✓ ";
-            color: #667eea;
+            color: #3498db;
             font-weight: bold;
             margin-right: 0.5rem;
         }
@@ -192,13 +223,13 @@
         /* Experience Section */
         .timeline {
             position: relative;
-            padding: 2rem 0;
+            padding: 1rem 0;
         }
 
         .timeline-item {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             padding-left: 2rem;
-            border-left: 3px solid #667eea;
+            border-left: 3px solid #3498db;
             position: relative;
         }
 
@@ -210,91 +241,44 @@
             width: 13px;
             height: 13px;
             border-radius: 50%;
-            background: #667eea;
+            background: #3498db;
             border: 3px solid white;
-            box-shadow: 0 0 0 3px #667eea;
+            box-shadow: 0 0 0 3px #3498db;
         }
 
         .timeline-item h3 {
-            color: #764ba2;
-            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.2rem;
             font-size: 1.3rem;
         }
 
+        .timeline-item .company {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
         .timeline-item .date {
-            color: #999;
+            color: #888;
             font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
 
-        .timeline-item p {
+        .timeline-item ul {
+            list-style-type: square;
+            margin-left: 1.2rem;
             color: #555;
-            line-height: 1.8;
         }
 
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: #f8f9fa;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-image {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-content h3 {
-            color: #764ba2;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-content p {
-            color: #555;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tag {
-            background: #667eea;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+        .timeline-item li {
+            margin-bottom: 0.4rem;
+            line-height: 1.6;
         }
 
         /* Contact Section */
         .contact-section {
             text-align: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
         }
 
@@ -306,24 +290,25 @@
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
             margin-top: 2rem;
         }
 
         .contact-link {
             display: inline-block;
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.8rem;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50px;
             color: white;
             text-decoration: none;
-            transition: background 0.3s;
+            transition: all 0.3s;
             border: 2px solid white;
         }
 
         .contact-link:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: white;
+            color: #2c3e50;
         }
 
         /* Footer */
@@ -335,268 +320,57 @@
             margin-top: 2rem;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-            .hero p {
-                font-size: 1.2rem;
-            }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
+        /* Responsive Nav */
+        @media(max-width: 600px) {
             nav {
                 flex-direction: column;
                 gap: 1rem;
             }
-
             .nav-links {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
-            }
-
-            section h2 {
-                font-size: 1.8rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+
     <header>
         <nav>
-            <div class="logo">DS</div>
+            <div class="logo">Darshana.S</div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <div class="hero">
         <h1>Darshana Sakhiya</h1>
-        <p>Creative Developer | Problem Solver | Tech Enthusiast</p>
-        <a href="#contact" class="cta-button">Get In Touch</a>
-    </section>
+        <p>Automation & Digital Transformation Specialist | 7+ Years of Experience Optimizer Across Finance, HR, and Operations</p>
+        <a href="#contact" class="cta-button">Connect With Me</a>
+    </div>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
+    <div class="container">
+        <section id="about">
+            <h2>Professional Summary</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Who I Am</h3>
-                    <p>
-                        I'm a passionate developer with a keen interest in creating innovative solutions 
-                        and beautiful digital experiences. With a strong foundation in web development and 
-                        a commitment to continuous learning, I strive to deliver high-quality projects 
-                        that make a real impact.
-                    </p>
-                    <p>
-                        My journey in tech has taught me the importance of clean code, user-centric design, 
-                        and effective collaboration. I love tackling challenging problems and turning ideas 
-                        into reality.
-                    </p>
+                    <p>I am an Automation and Digital Transformation Specialist with over 7 years of specialized background driving process optimizations within Shared Services environments. My primary core lies in identifying procedural bottlenecks, advising corporate stakeholders, and rolling out robust solutions via RPA, complex workflows, and integrated AI systems.</p>
+                    <p>Proven track record of building valid business cases, accelerating operation turnarounds, and spearheading cross-functional scrum groups within demanding Agile ecosystems.</p>
                 </div>
-                <div class="about-text">
-                    <h3>My Approach</h3>
-                    <p>
-                        I believe in combining technical excellence with creative thinking. Every project 
-                        is an opportunity to learn and grow. I focus on:
-                    </p>
-                    <ul style="margin-left: 1.5rem; color: #555;">
-                        <li>✓ Writing clean, maintainable code</li>
-                        <li>✓ Creating responsive, user-friendly interfaces</li>
-                        <li>✓ Solving complex problems efficiently</li>
-                        <li>✓ Collaborating effectively with teams</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="quick-info">
+                    <h4>Quick Overview</h4>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Frontend Development</h3>
-                    <ul>
-                        <li>HTML & CSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>Responsive Design</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Backend Development</h3>
-                    <ul>
-                        <li>Node.js</li>
-                        <li>Express.js</li>
-                        <li>Database Design</li>
-                        <li>API Development</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Tools & Technologies</h3>
-                    <ul>
-                        <li>Git & GitHub</li>
-                        <li>VS Code</li>
-                        <li>Figma</li>
-                        <li>Canva</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <h3>Soft Skills</h3>
-                    <ul>
-                        <li>Communication</li>
-                        <li>Problem Solving</li>
-                        <li>Team Collaboration</li>
-                        <li>Project Management</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Web Developer</h3>
-                    <div class="date">2023 - Present</div>
-                    <p>
-                        Developing responsive web applications using modern technologies. 
-                        Collaborating with cross-functional teams to deliver high-quality solutions.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Junior Developer</h3>
-                    <div class="date">2022 - 2023</div>
-                    <p>
-                        Started career with focus on frontend development. Learned industry best practices 
-                        and contributed to various projects using HTML, CSS, and JavaScript.
-                    </p>
-                </div>
-                <div class="timeline-item">
-                    <h3>Student & Self-Learner</h3>
-                    <div class="date">2020 - 2022</div>
-                    <p>
-                        Dedicated time to learning web development through online courses, projects, 
-                        and building personal portfolio projects.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">📱</div>
-                    <div class="project-content">
-                        <h3>Responsive Portfolio Website</h3>
-                        <p>
-                            A fully responsive portfolio website showcasing my work and skills 
-                            with modern design principles.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">HTML</span>
-                            <span class="tag">CSS</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">🛒</div>
-                    <div class="project-content">
-                        <h3>E-Commerce Application</h3>
-                        <p>
-                            Built a functional e-commerce platform with product listings, 
-                            shopping cart, and checkout functionality.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">📊</div>
-                    <div class="project-content">
-                        <h3>Analytics Dashboard</h3>
-                        <p>
-                            Created an interactive dashboard for data visualization and analysis 
-                            with real-time updates.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Chart.js</span>
-                            <span class="tag">API</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2>Let's Connect</h2>
-            <p style="font-size: 1.2rem; margin: 1rem 0;">I'd love to hear from you kapil ! Feel free to reach out.</p>
-            <div class="contact-links">
-                <a href="mailto:darshana@example.com" class="contact-link">📧 Email</a>
-                <a href="https://github.com" class="contact-link">🐙 GitHub</a>
-                <a href="https://linkedin.com" class="contact-link">💼 LinkedIn</a>
-                <a href="https://twitter.com" class="contact-link">🐦 Twitter</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Darshana Sakhiya. All rights reserved.</p>
-        <p>Crafted with ❤️ and lots of ☕</p>
-    </footer>
-</body>
-</html>
